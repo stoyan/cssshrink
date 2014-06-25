@@ -1,0 +1,24 @@
+body { content: "Bitstream Vera Serif Bold"}
+a{font-family: 'Go\nudy Bo\"\"okletter 1911', sans-serif;}
+b{font-family: "Red/Bl\"ack", sans-serif;}
+i{font-family: "Bl\'ack", sans-serif;}
+.i{font-family: 'Bl\'ack', sans-serif;}
+
+/** expected pretty **/
+
+
+body {
+  content: "Bitstream Vera Serif Bold";
+}
+
+a {
+  font-family: 'Go\nudy Bo""okletter 1911',sans-serif;
+}
+
+b {
+  font-family: 'Red/Bl"ack',sans-serif;
+}
+
+i, .i {
+  font-family: "Bl'ack",sans-serif;
+}

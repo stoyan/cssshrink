@@ -1,0 +1,16 @@
+.pad {
+  padding: +0px;
+  margin: -0px;
+}
+.pad-again {
+  padding: +1px;
+  margin: -1px;
+}
+.pad-last-one-i-promise {
+  padding: +0;
+  margin: -0;
+}
+
+/** expected **/
+
+.pad{padding:0;margin:0}.pad-again{padding:1px;margin:-1px}.pad-last-one-i-promise{padding:0;margin:0}

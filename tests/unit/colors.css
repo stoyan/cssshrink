@@ -1,0 +1,14 @@
+a {
+  color: rgba(100%, 0%, 20%, 0.1);
+  background-color: rgb(100%, 0%, 20%);
+  border-color: #ff0000;
+}
+
+/** expected pretty **/
+
+a {
+  color: rgba(255,0,51,.1);
+  background-color: #f03;
+  border-color: red;
+}
+

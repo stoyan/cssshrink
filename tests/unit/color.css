@@ -1,0 +1,23 @@
+.color {
+  color: rgb(123, 123, 123);
+  background-color: #ffeedd;
+  filter: chroma(color="#FFFFFF");
+  outline-color: khaki;
+}
+a {
+  background: none repeat scroll 0 0 rgb(255, 0,0);
+}
+
+/** expected pretty **/
+
+.color {
+  color: #7b7b7b;
+  background-color: #fed;
+  filter: chroma(color="#FFFFFF");
+  outline-color: khaki;
+}
+
+a {
+  background: none repeat scroll 0 0 red;
+}
+

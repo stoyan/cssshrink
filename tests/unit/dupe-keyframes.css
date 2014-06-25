@@ -1,0 +1,53 @@
+@keyframes boom {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50% 50%;
+  }
+}
+
+a {color: white}
+
+@-moz-keyframes boom {
+  0% {
+    background-position: 10% 10%;
+  }
+  100% {
+    background-position: 90% 90%;
+  }
+}
+
+@keyframes boom {
+  from {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/** expected pretty **/
+
+a {
+  color: #fff;
+}
+
+@-moz-keyframes boom {
+  0% {
+    background-position: 10% 10%;
+  }
+  to {
+    background-position: 90% 90%;
+  }
+}
+
+@keyframes boom {
+  0% {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+

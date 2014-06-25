@@ -1,0 +1,13 @@
+a {
+  font-weight: bold;
+}
+a {
+  font-weight: normal;
+}
+b {
+  font-weight: bolder;
+}
+
+/** expected **/
+
+a{font-weight:700;font-weight:400}b{font-weight:bolder}

@@ -1,0 +1,10 @@
+a {
+ width: calc(12  / 2);
+ width: calc(12 *   2);
+ width: calc(12   - 2);
+ background: repeating-linear-gradient( top left   -45deg , black , black calc( 1 + 1 ) , white 5px , white 10px );
+}
+
+/** expected **/
+
+a{width:calc(12/2);width:calc(12*2);width:calc(12 - 2);background:repeating-linear-gradient(top left -45deg,#000,#000 calc(1 + 1),#fff 5px,#fff 10px)}

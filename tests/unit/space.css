@@ -1,0 +1,10 @@
+
+
+ a , b {
+ color : white ; 
+}
+
+
+/** expected **/
+
+a,b{color:#fff}

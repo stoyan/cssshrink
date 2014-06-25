@@ -1,0 +1,11 @@
+a {
+  /* totally empty*/
+  ; ; ; ;
+}
+b {
+  overflow: none;
+}
+
+/** expected **/
+
+b{overflow:none}

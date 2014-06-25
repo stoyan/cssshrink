@@ -1,0 +1,20 @@
+.yo {
+  animation-delay: -456ms;
+}
+.y0 {
+  animation-delay: +0.0ms;
+}
+.d {
+  animation-delay: 1400mS;
+}
+.b {
+  animation-delay: 0.7s;
+}
+.c {
+  animation-delay: 14S;
+}
+
+
+/** expected **/
+
+.yo{animation-delay:-456ms}.y0{animation-delay:0}.d{animation-delay:1.4s}.b{animation-delay:.7s}.c{animation-delay:14s}

@@ -1,0 +1,8 @@
+div {
+  width: 0px;
+  transform:rotate(0turn);
+}
+
+/** expected **/
+
+div{width:0;transform:rotate(0deg)}

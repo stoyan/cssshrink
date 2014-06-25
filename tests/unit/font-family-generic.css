@@ -1,0 +1,21 @@
+a { font-family: verdana, serif ;}
+b { font-family: verdana, serif, monospace ;}
+i { 
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif, serif
+}
+em {font-family: Arial}
+
+/** expected pretty **/
+
+a, b {
+  font-family: verdana,serif;
+}
+
+i {
+  font-family: Arial,Helvetica,Helvetica Neue,sans-serif;
+}
+
+em {
+  font-family: Arial;
+}
+

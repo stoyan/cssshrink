@@ -1,0 +1,13 @@
+.yo {
+  animation-iteration-count: -0.0;
+}
+.y0 {
+  animation-iteration-count: -0.9;
+}
+.pad {
+  padding: 012.340px;
+}
+
+/** expected **/
+
+.yo{animation-iteration-count:0}.y0{animation-iteration-count:-.9}.pad{padding:12.34px}

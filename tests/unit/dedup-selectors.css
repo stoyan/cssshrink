@@ -1,0 +1,7 @@
+a, b i , [href], a {
+  color: white;
+}
+
+/** expected **/
+
+a,b i,[href]{color:#fff}

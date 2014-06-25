@@ -1,0 +1,7 @@
+a:first-line {color: #fff}
+a::first-line {color: white}
+a::selection{color: white}
+
+/** expected **/
+
+a:first-line ,a::selection{color:#fff}

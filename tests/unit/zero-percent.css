@@ -1,0 +1,5 @@
+a {right: 0%; left: 0px; top: 1%; }
+
+/** expected **/
+
+a{right:0;left:0;top:1%}

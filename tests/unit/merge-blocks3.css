@@ -1,0 +1,7 @@
+a, b, s { color : white}
+a,b,s { background:  red; }
+a,b,s { background:  red; }
+
+/** expected **/
+
+a,b,s{color:#fff;background:red}

@@ -1,0 +1,45 @@
+body { font-family: "Bitstream Vera Serif Bold", serif }
+a{font-family: "Goudy Bookletter 1911", sans-serif;}
+b{font-family: "Red/Black", sans-serif;}
+i{font-family: '"Lucida" Grande', sans-serif;}
+em{font-family: "Ahem!", sans-serif;}
+s{font-family: "test@foo", sans-serif;}
+sup{font-family: "#POUND", sans-serif;}
+.y{font-family: "Hawaii 5-0", sans-serif;}
+
+
+/** expected pretty **/
+
+
+body {
+  font-family: Bitstream Vera Serif Bold,serif;
+}
+
+a {
+  font-family: "Goudy Bookletter 1911",sans-serif;
+}
+
+b {
+  font-family: "Red/Black",sans-serif;
+}
+
+i {
+  font-family: '"Lucida" Grande',sans-serif;
+}
+
+em {
+  font-family: "Ahem!",sans-serif;
+}
+
+s {
+  font-family: "test@foo",sans-serif;
+}
+
+sup {
+  font-family: "#POUND",sans-serif;
+}
+
+.y {
+  font-family: "Hawaii 5-0",sans-serif;
+}
+

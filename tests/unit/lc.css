@@ -1,0 +1,7 @@
+.pa {
+  -moz-paDDing: +0px;
+}
+
+/** expected **/
+
+.pa{-moz-padding:0}

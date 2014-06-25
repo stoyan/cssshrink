@@ -1,0 +1,7 @@
+a, b, s { color : white}
+b, i { color:  #fff; }
+a, .yo { color:  rgb(100%, 100%, 100%); }
+
+/** expected **/
+
+a,b,s,i,.yo{color:#fff}

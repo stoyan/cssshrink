@@ -1,0 +1,25 @@
+{
+  "name": "cssshrink",
+  "version": "0.0.1",
+  "description": "CSS minifier",
+  "keywords": [
+    "css",
+    "transform",
+    "browser",
+    "minify"
+  ],
+  "author": "Stoyan <ssttoo@ymail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stoyan/cssshrink.git"
+  },
+  "main": "index",
+  "bin": {
+    "cssshrink": "./bin/cli.js"
+  },
+  "dependencies": {
+    "prettyugly": "*",
+    "gonzales-ast": "*",
+    "csscolormin": "*"
+  }
+}

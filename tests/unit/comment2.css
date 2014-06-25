@@ -1,0 +1,8 @@
+/*!Yo*/
+html > body p {
+    color: blue; 
+}
+
+/** expected **/
+
+/*!Yo*/html>body p{color:blue}

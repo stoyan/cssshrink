@@ -1,0 +1,5 @@
+/*!yo */ a /* t */ {color: /* co */ red; /* comment */}
+
+/** expected **/
+
+/*!yo*/a{color:red}

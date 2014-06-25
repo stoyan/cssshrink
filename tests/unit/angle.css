@@ -1,0 +1,45 @@
+.yo {
+  transform: rotate( 0.5turn ) ;
+}
+.y1 { 
+  transform: skewX( 0rad);
+}
+.y2 {
+  transform: skewY(1.07rad );
+}
+.y3 {
+  transform: rotate3d(1, 2.0, 3.0, 10deg) ;
+}
+.y4 {
+  transform: rotateX(10deg) ;
+}
+.y5 {
+  transform: translateX(10px)   rotate(10deg)   translateY(5px) ;
+}
+
+/** expected pretty **/
+
+.yo {
+  transform: rotate(180deg);
+}
+
+.y1 {
+  transform: skewX(0deg);
+}
+
+.y2 {
+  transform: skewY(1.07rad);
+}
+
+.y3 {
+  transform: rotate3d(1,2,3,10deg);
+}
+
+.y4 {
+  transform: rotateX(10deg);
+}
+
+.y5 {
+  transform: translateX(10px) rotate(10deg) translateY(5px);
+}
+

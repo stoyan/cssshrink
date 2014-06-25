@@ -1,0 +1,8 @@
+a {
+  background-image : url( "http://dude.com" ) ;
+  background : url( "http://dude.com/hello hello" ) ;
+}
+
+/** expected **/
+
+a{background-image:url(http://dude.com);background:url("http://dude.com/hello hello")}

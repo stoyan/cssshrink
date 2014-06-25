@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Shrink</title>
+  <script src="bundle.js"></script>
+  <script src="prism.js"></script>
+  <link rel="stylesheet" href="prism.css">
+  <style>
+  html {
+    background: #eee;
+  }
+  body {
+    font: 16px Roboto, sans-serif;
+  }
+  textarea {
+    font: 16px Consolas,Monaco,'Andale Mono',monospace;
+  }
+  .code {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    margin-top: 20px;
+  }
+  pre {
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background-color: #141414 !important;
+    box-shadow: none !important;
+  }
+  .tit {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 4px;
+  }
+  .subtit {
+    font-size: 14px;
+    color: #999;
+  }
+  .wrap {
+    background: white;
+    padding: 0 15px;
+    margin: 5px 0 0;
+  }
+  .oneopt {
+    padding: 10px 15px;
+  }
+  #showopts {
+    cursor: pointer;
+  }
+  #browsers {
+    margin-top: 10px;
+  }
+  .hide {
+    display: none;
+  }
+  .shrinkface {
+    background: url(img/bck.png) repeat center;
+    height: 200px;
+  }
+  .mdogithub {
+      background-color: #3072b3;
+      background-image: -moz-linear-gradient(center top , #599bdc 0%, #3072b3 100%);
+      background-repeat: repeat-x;
+      border: 1px solid #2967a4;
+      border-radius: 6px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+  .npm {
+      background-color: #eee;
+      background-image: -moz-linear-gradient(center top , #eee 0%, #ededed 100%);
+      background-repeat: repeat-x;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.2);
+      color: black;
+      font-size: 1.2rem;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+      position: relative;
+      top: -3px;
+  }
+  #before {
+    background: #BD2426;
+    display: inline-block;
+    width: 300px;
+  }
+  #after {
+    background: #48AF16;
+    display: inline-block;
+    width: 200px
+  }
+  .gzipped {
+    color: #666;
+  }
+  .by {
+    font-size: 28px;
+    margin-top: 24px;
+    color: #666;
+    text-transform: uppercase;
+  }
+  #percent {
+    font-size: 62px;
+    font-weight: bold;
+  }
+  #percentgzipped {
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+  }
+  .pretty {
+    color: #eee;
+    margin: 20px 0 0 20px;
+    font-size: 28px;
+  }
+  #gear {
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <table width="100%" cellpadding="5" cellspacing="15">
+    <tr><td colspan="2" align="middle">
+      <img src="img/logo.png">
+      <p class="subtit">OPEN 24 HOURS - MONDAY TO SUNDAY</p>
+    </td></tr>
+
+    <tr><td colspan="2" align="middle">
+      <table width="100%" class="shrinkface">
+        <tr>
+          <td width="40%" align="right">
+            <a class="npm" href="https://npmjs.org/package/cssshrink">
+              Install with
+              <img src="img/npm.png" width="70" style="position: relative; top: 10px">
+            </a>
+          </td>
+          <td width="20%" align="middle">
+            <img src="img/shrink.png">
+          </td>
+          <td width="40%">
+            <a class="mdogithub" href="https://github.com/stoyan/cssshrink">Fork on GitHub</a>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <tr><td colspan="2" align="middle">
+      <div class="by">Shrunk by</div>
+      <div id="percent"></div>
+      <div id="percentgzipped" class="gzipped"></div>
+    </td></tr>
+
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+
+    <tr><td colspan="2" align="middle">
+      <table width="40%"><tr>
+        <td align="right" width="40%">Your code:</td>
+        <td><nobr><div id="before">&nbsp;</div> <span id="beforestats"></span></nobr></td>
+        </tr><tr>
+          <td colspan="2" height="5"></td>
+        </tr><tr>
+        <td align="right"><nobr>Your code after the shrink:</nobr></td>
+        <td><nobr><div id="after">&nbsp;</div> <span id="afterstats"></span></nobr></td>
+      </tr></table>
+    </td></tr>
+
+    <tr><td colspan="2" align="right">
+      <table class="wrap" onclick="toggle(opts)"><tr><td>
+        <span id="showopts">OPTIONS</td><td>
+        <img src="img/gear.png" id="gear"></span></td></tr>
+      </table>
+      <table id="opts" class="hide">
+        <tr><td>
+        <div class="wrap oneopt">
+          <input type="checkbox" id="optugly" onclick="update()"/> <label for="optugly">Only space and comments</label>
+        </div>
+        <div class="wrap oneopt">
+          <input type="checkbox" id="optbs" onclick="toggle(browsers); update()"/> <label for="optbs">Browser-specific CSS</label>
+          <div><select id="browsers" class="hide" onchange="update()"></select></div>
+        </div>
+      </td></tr></table>
+      </div>
+    </td></tr>
+
+    <tr valign="top"><td width="50%" style="background: white" id="thewidth">
+      <img src="img/in.png" /> <span class="tit">IN</span> <span id="instats"></span>
+      <textarea id="css" placeholder="feed me css"
+        class="code">@media print {a {color: #ff0000}}
+@media print {a {color: #f00;}}
+</textarea>
+      </td><td style="background: white">
+      <img src="img/out.png" /> <span class="tit">OUT</span> <span id="outstats"></span>
+      <textarea id="min" class="code"></textarea>
+    </td></tr>
+
+    <tr><td colspan="2">
+      <div style="color: red; background: black" id="err"></div>
+    </td></tr>
+
+    <tr valign="top" id="prettify"><td width="50%" style="background: #141414">
+      <div class="tit pretty">Pretty IN</div>
+      <pre id="inpre"><code class="language-css" id="prettyin"></code></pre>
+      </td><td style="background: #141414">
+      <div class="tit pretty">Pretty OUT</div>
+      <pre id="outpre"><code class="language-css" id="prettyout"></code></pre>
+     </td></tr>
+
+     <tr><td colspan="2" align="middle">
+       <table width="100%" class="shrinkface" style="margin-top: 50px">
+         <tr>
+           <td width="40%" align="right">
+             <a class="npm" href="https://npmjs.org/package/cssshrink">
+               Install with
+               <img src="img/npm.png" width="70" style="position: relative; top: 10px">
+             </a>
+           </td>
+           <td width="20%" align="middle">
+             <img src="img/shrink.png">
+           </td>
+           <td width="40%">
+             <a class="mdogithub" href="https://github.com/stoyan/cssshrink">Fork on GitHub</a>
+           </td>
+         </tr>
+       </table>
+     </td></tr>
+
+     <tr><td colspan="2" align="middle">
+        <img src="img/logo.png">
+        <p class="subtit">OPEN 24 HOURS - MONDAY TO SUNDAY</p>
+      </td></tr>
+
+  </table>
+
+
+  <script>
+  function update() {
+    err.innerHTML = '';
+
+    var brows;
+    if (optbs.checked) {
+      brows = browsers.value;
+    }
+
+    try {
+
+      var instr = css.value;
+      var outstr = shrink(instr, optugly.checked, brows);
+      min.innerHTML = outstr;
+
+      var insize = instr.length;
+      var outsize = outstr.length;
+
+      var ingz = gz(instr);
+      var outgz = gz(outstr);
+
+      instats.innerHTML = beforestats.innerHTML = insize + ' bytes <span class="gzipped">(' + ingz + ' gzipped)</span>';
+      outstats.innerHTML = afterstats.innerHTML = outsize + ' bytes <span class="gzipped">(' + outgz + ' gzipped)</span>';
+
+      var byby = (100 - 100 * outsize / insize).toPrecision(4);
+      percent.innerHTML = isNaN(byby) ? "0%" : "" + byby + "%";
+      percentgzipped.innerHTML = "(" + (100 - 100 * outgz / ingz).toPrecision(4) + "% gzipped)";
+
+
+      after.style.width = outsize
+       ? (before.offsetWidth * (insize ? outsize / insize : 1)) + 'px'
+       : '1px';
+
+
+      if (insize < 50000 && outsize > 0) {
+        prettify.classList.remove('hide');
+        prettyin.innerHTML = pretty(instr);
+        prettyout.innerHTML = pretty(outstr);
+        Prism.highlightElement(prettyin);
+        Prism.highlightElement(prettyout);
+      } else {
+        prettify.classList.add('hide');
+      }
+
+    } catch (e) {
+      err.innerHTML = "lolwutomgbbq: " + e.message;
+    }
+  }
+
+  onload = function() {
+    browsers.innerHTML = getBrowswerOptions().join('');
+
+    sizePres();
+    optbs.checked = false;
+    optugly.checked = false;
+    update();
+  };
+
+  onresize = sizePres;
+
+  function sizePres() {
+    var size = thewidth.offsetWidth;
+    outpre.style.width = inpre.style.width = (size - 50) + 'px';
+  }
+
+  css.oninput = update;
+
+  function toggle(who) {
+    who.classList.toggle('hide');
+  }
+
+  WebFontConfig = {
+    google: { families: [ 'Roboto:400,700:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+  </script>
+</body>
+</html>

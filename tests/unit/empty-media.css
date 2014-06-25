@@ -1,0 +1,6 @@
+.stuff {color: white}
+@media print { a { } }
+
+/** expected **/
+
+.stuff{color:#fff}

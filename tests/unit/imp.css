@@ -1,0 +1,7 @@
+div{
+  color: red !important
+}
+
+/** expected **/
+
+div{color:red!important}

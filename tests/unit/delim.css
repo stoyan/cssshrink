@@ -1,0 +1,10 @@
+
+
+ a , b {
+ color : white ; font: 11px Verdana;
+}
+
+
+/** expected **/
+
+a,b{color:#fff;font:11px Verdana}

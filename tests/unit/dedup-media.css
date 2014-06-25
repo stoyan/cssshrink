@@ -1,0 +1,6 @@
+@media print {a {color: #ff0000}}
+@media print {a {color: #f00;}}
+
+/** expected **/
+
+@media print{a{color:red}}

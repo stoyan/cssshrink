@@ -1,0 +1,38 @@
+@-ms-keyframes boom {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50% 50%;
+  }
+}
+
+@-moz-keyframes boom {
+  0% {
+    background-position: 10% 10%;
+  }
+  100% {
+    background-position: 90% 90%;
+  }
+}
+
+/** expected pretty **/
+
+@-ms-keyframes boom {
+  0% {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50% 50%;
+  }
+}
+
+@-moz-keyframes boom {
+  0% {
+    background-position: 10% 10%;
+  }
+  to {
+    background-position: 90% 90%;
+  }
+}
+
