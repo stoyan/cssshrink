@@ -28,3 +28,7 @@ Available at http://cssshrink.com
 ## More info
 
 Slides at http://cssshrink.com/velocity
+
+## Grunt task
+
+A grunt task is avaiable as here [grunt-cssshrink](https://github.com/JohnCashmore/grunt-cssshrink)
