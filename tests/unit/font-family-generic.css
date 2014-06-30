@@ -1,14 +1,14 @@
-a { font-family: verdana, serif ;}
-b { font-family: verdana, serif, monospace ;}
+a { font-family: verdana, serif !important;}
+b { font-family: verdana, serif, monospace !important;}
 i { 
-  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif, serif
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif, serif, Times New Roman
 }
 em {font-family: Arial}
 
 /** expected pretty **/
 
 a, b {
-  font-family: verdana,serif;
+  font-family: verdana,serif!important;
 }
 
 i {
