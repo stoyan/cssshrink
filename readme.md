@@ -29,6 +29,7 @@ Available at http://cssshrink.com
 
 Slides at http://cssshrink.com/velocity
 
-## Grunt task
+## Grunt and Gulp tasks
 
-A grunt task is avaiable as here [grunt-cssshrink](https://github.com/JohnCashmore/grunt-cssshrink)
+* [grunt-cssshrink](https://github.com/JohnCashmore/grunt-cssshrink) 
+* [gulp-cssshrink](https://www.npmjs.org/package/gulp-cssshrink)
