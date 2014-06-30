@@ -1421,18 +1421,19 @@ exports.min = function min(c) {
     var colour = color(c);
   }
   var alpha = colour.values.alpha;
-  
-  if (alpha === 0) {
+  var rgb = colour.values.rgb;
+
+  if (rgb[0] === 0 && rgb[1] === 0 && rgb[2] === 0 && alpha === 0) {
     return 'transparent';
   }
-  
-  if (alpha && alpha !== 1) {
+
+  if (alpha !== 1) {
     // no choice, gotta be rgba
     if (alpha < 1) {
       alpha = String(alpha).replace('0.', '.');
     }
     return string
-      .rgbaString(colour.values.rgb, alpha)
+      .rgbaString(rgb, alpha)
       .replace(/ /g, '')
       .toLowerCase();
   }
@@ -11510,15 +11511,25 @@ module.exports = {
 
   process: function(node) {
     var newnode = [node[0], node[1], [node[2][0]]];
+    var generic_found = false;
 
     for (var i = 1; i < node[2].length; i++) {
-      var value = node[2][i][1].toLowerCase();
-      if (generic.indexOf(value) !== -1) {
-        node[2][i][1] = value; // lowercase generic
+
+      if (node[2][i][0] === 'important') {
         newnode[2].push(node[2][i]);
         return newnode;
       }
-      newnode[2].push(node[2][i]);
+
+      var value = node[2][i][1].toLowerCase();
+      if (!generic_found && generic.indexOf(value) !== -1) {
+        generic_found = true;
+        node[2][i][1] = value; // lowercase generic
+        newnode[2].push(node[2][i]);
+      }
+      if (!generic_found) {
+        newnode[2].push(node[2][i]);
+      }
+
     }
     return newnode;
   }
