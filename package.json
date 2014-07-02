@@ -21,5 +21,8 @@
     "prettyugly": "*",
     "gonzales-ast": "*",
     "csscolormin": "*"
-  }
+  },
+  "scripts": {
+    "test": "node tests/t.js"
+  } 
 }
