@@ -11905,7 +11905,8 @@ module.exports = {
 };
 
 },{"prettyugly":43}],100:[function(require,module,exports){
-var except = ['deg', 'grad', 'turn', 'rad'];
+var angle = ['deg', 'grad', 'turn', 'rad'];
+var time = ['ms', 's'];
 
 module.exports = {
 
@@ -11918,10 +11919,16 @@ module.exports = {
       return node;
     }
 
-    if (except.indexOf(node[2][1]) !== -1) {
+    if (angle.indexOf(node[2][1]) !== -1) {
       node[2][1] = 'deg';
       return node;
     }
+
+    if (time.indexOf(node[2][1]) !== -1) {
+      node[2][1] = 's';
+      return node;
+    }
+
     return ['number', '0'];
   }
 
