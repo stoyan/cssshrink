@@ -6,14 +6,15 @@ var path = require('path');
 var dir = fs.readdirSync;
 var read = fs.readFileSync;
 
-var p = './unit';
+var p = path.resolve(__dirname, "unit");
 dir(p).forEach(function(f) {
 
   if (path.extname(f) !== '.css') {
     return;
   }
 
-  var cont = read('./unit/' + f).toString();
+  var fileFullPath = path.resolve(__dirname, "unit", f);
+  var cont = read(fileFullPath).toString();
 
   var pieces = cont.split('/** expected **/');
   var pretty = false;
@@ -33,6 +34,11 @@ dir(p).forEach(function(f) {
   if (pretty) {
     after = prettyugly.pretty(after).trim();
   }
+
+  // \r\n pitfall
+  var NEW_LINE = "----NEW_LINE----";
+  expected = expected.replace(/\r\n|\r|\n/g, NEW_LINE);
+  after = after.replace(/\r\n|\r|\n/g, NEW_LINE);
 
   if (expected !== after) {
     console.log('OH NOES! Trouble in ' + f);
