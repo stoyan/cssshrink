@@ -18,8 +18,8 @@
     "cssshrink": "./bin/cli.js"
   },
   "dependencies": {
-    "prettyugly": "*",
-    "gonzales-ast": "*",
+    "prettyugly": "0.0.5",
+    "gonzales-ast": "0.0.6",
     "csscolormin": "*"
   },
   "scripts": {
